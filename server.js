@@ -27,15 +27,12 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
-// ─── Static Files (Production: serve React build) ───────────
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
-
 // ─── API Routes ─────────────────────────────────────────────
 app.use('/api', repoRoutes);
 
-// ─── Catch-all: Serve React app for any non-API route ───────
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+// ─── Health Check Route (for Render) ────────────────────────
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'Repo Info Generator API is running' });
 });
 
 // ─── Error Handler (must be registered last) ────────────────

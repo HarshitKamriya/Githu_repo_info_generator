@@ -27,7 +27,8 @@ function App() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/generate', {
+      const API_URL = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${API_URL}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ repoUrl, token: token || undefined }),
