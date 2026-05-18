@@ -1,0 +1,43 @@
+/* ─── Error Banner ─────────────────────────────────────── */
+.error-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--error-light);
+  border: 1px solid rgba(207, 34, 46, 0.2);
+  border-radius: var(--radius);
+  color: var(--error);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  animation: bannerIn 0.25s ease;
+}
+
+.error-banner__icon {
+  flex-shrink: 0;
+}
+
+.error-banner__text {
+  flex: 1;
+}
+
+.error-banner__close {
+  background: none;
+  border: none;
+  color: var(--error);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity var(--transition);
+}
+
+.error-banner__close:hover {
+  opacity: 1;
+}
+
+@keyframes bannerIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,242 @@
+/* ─── Results Panel ─────────────────────────────────────── */
+.results-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  animation: panelIn 0.3s ease;
+}
+
+/* ─── Tab Bar ──────────────────────────────────────────── */
+.results-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-input);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.results-tabs__left {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.results-tabs__right {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.results-tab {
+  padding: 0.45rem 0.9rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.results-tab:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.results-tab--active {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─── Action Buttons ───────────────────────────────────── */
+.btn-secondary,
+.btn-success {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.btn-success {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+
+.btn-success:hover {
+  background: #28944a;
+}
+
+/* ─── Content Area ─────────────────────────────────────── */
+.results-content {
+  padding: 1.5rem;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────── */
+.results-content::-webkit-scrollbar { width: 5px; }
+.results-content::-webkit-scrollbar-track { background: transparent; }
+.results-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.results-content::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ─── Raw View ─────────────────────────────────────────── */
+.raw-view {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: var(--font-mono);
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ─── Markdown Body (Preview) ──────────────────────────── */
+.markdown-body h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.markdown-body h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 1.4rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.markdown-body p {
+  margin-bottom: 0.6rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem 1rem;
+  margin: 0.6rem 0;
+  background: var(--accent-light);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0;
+  font-size: 0.85rem;
+}
+
+.markdown-body th {
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+.markdown-body td {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.markdown-body tr:hover td {
+  background: var(--bg-input);
+}
+
+.markdown-body code {
+  font-family: var(--font-mono);
+  background: var(--bg-code);
+  color: var(--accent-hover);
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.84em;
+}
+
+.markdown-body pre {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.6rem 0;
+}
+
+.markdown-body pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+.markdown-body a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body img {
+  max-width: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}
+
+.markdown-body em {
+  color: var(--text-muted);
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Responsive ───────────────────────────────────────── */
+@media (max-width: 640px) {
+  .results-tabs {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .results-tabs__right { width: 100%; }
+  .btn-success, .btn-secondary { flex: 1; justify-content: center; }
+  .results-content { padding: 1rem; }
+}
